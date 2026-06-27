@@ -103,3 +103,6 @@ animation:shake .7s;
 100%{transform:translateX(0);}
 
 }
+button{
+transition:all .4s ease;
+}

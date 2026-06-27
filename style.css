@@ -1,108 +1,29 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+let count = 0;
 
-body{
-background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff5fa);
-font-family:'Poppins',sans-serif;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-overflow:hidden;
-}
+function showMessage() {
+    const btn = document.querySelector("button");
+    const surprise = document.getElementById("surprise");
 
-.container{
-width:90%;
-max-width:700px;
-background:white;
-padding:40px;
-border-radius:25px;
-text-align:center;
-box-shadow:0 15px 40px rgba(255,105,180,.3);
-animation:fade 1.5s;
-}
+    count++;
 
-.photo{
-width:250px;
-height:250px;
-object-fit:cover;
-border-radius:50%;
-border:8px solid #ff9ac7;
-margin-bottom:25px;
-}
+    if (count < 4) {
+        btn.style.position = "fixed";
 
-h1{
-font-family:'Dancing Script',cursive;
-font-size:55px;
-color:#ff4f94;
-margin-bottom:20px;
-}
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
 
-.message{
-font-size:18px;
-line-height:1.9;
-color:#666;
-margin-bottom:30px;
-}
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
 
-button{
-padding:15px 35px;
-font-size:18px;
-background:#ff69b4;
-border:none;
-color:white;
-border-radius:40px;
-cursor:pointer;
-transition:.3s;
-}
+        return;
+    }
 
-button:hover{
-transform:scale(1.08);
-background:#ff4f94;
-}
+    btn.style.position = "static";
+    btn.style.left = "";
+    btn.style.top = "";
 
-#surprise{
-display:none;
-margin-top:35px;
-padding:25px;
-background:#ffe8f2;
-border-radius:20px;
-animation:fade 1s;
-}
-
-#surprise h2{
-color:#ff4f94;
-margin-bottom:15px;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-.shake{
-animation:shake .7s;
-}
-
-@keyframes shake{
-
-0%{transform:translateX(0);}
-15%{transform:translateX(-10px);}
-30%{transform:translateX(10px);}
-45%{transform:translateX(-10px);}
-60%{transform:translateX(10px);}
-75%{transform:translateX(-5px);}
-100%{transform:translateX(0);}
-
-}
-button{
-transition:all .4s ease;
+    setTimeout(() => {
+        surprise.style.display = "block";
+        surprise.scrollIntoView({ behavior: "smooth" });
+    }, 300);
 }

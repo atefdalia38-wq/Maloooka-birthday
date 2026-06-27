@@ -1,29 +1,62 @@
-let count = 0;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-function showMessage() {
-    const btn = document.querySelector("button");
-    const surprise = document.getElementById("surprise");
+body{
+  background: linear-gradient(135deg, #ffd6e7, #ffeaf3, #fff0f5);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    count++;
+.container{
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+}
 
-    if (count < 4) {
-        btn.style.position = "fixed";
+h1{
+  color: #ff4d88;
+  margin-bottom: 10px;
+}
 
-        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
-        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+.subtitle{
+  color: #999;
+  margin-bottom: 20px;
+}
 
-        btn.style.left = x + "px";
-        btn.style.top = y + "px";
+.card{
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  color: #444;
+}
 
-        return;
-    }
+button{
+  background: #ff4d88;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    btn.style.position = "static";
-    btn.style.left = "";
-    btn.style.top = "";
+button:hover{
+  background: #ff2f73;
+}
 
-    setTimeout(() => {
-        surprise.style.display = "block";
-        surprise.scrollIntoView({ behavior: "smooth" });
-    }, 300);
+#hiddenMessage{
+  margin-top: 15px;
+  color: #ff4d88;
+  font-weight: bold;
 }

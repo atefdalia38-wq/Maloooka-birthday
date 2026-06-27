@@ -3,106 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Malak 💖</title>
+<title>Happy Birthday Maloooka 💖</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff0f5);
-overflow:hidden;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
-.card{
-text-align:center;
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-animation:pop 1s ease;
-}
-
-h1{
-color:#ff4d88;
-font-size:40px;
-margin-bottom:10px;
-}
-
-p{
-color:#555;
-font-size:18px;
-margin-bottom:20px;
-}
-
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:#ff4d88;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#e63e77;
-transform:scale(1.05);
-}
-
-@keyframes pop{
-from{transform:scale(0.5);opacity:0;}
-to{transform:scale(1);opacity:1;}
-}
-
-.balloon{
-position:absolute;
-width:30px;
-height:40px;
-background:#ff7aa2;
-border-radius:50%;
-animation:float 6s infinite ease-in-out;
-}
-
-@keyframes float{
-0%{transform:translateY(100vh);}
-100%{transform:translateY(-120vh);}
-}
-</style>
 </head>
 
 <body>
 
-<div class="card">
-<h1>Happy Birthday Malak 💖</h1>
-<p>Wishing you a day full of love, happiness and surprises 🎉</p>
-<button onclick="showMessage()">Click for a surprise 🎁</button>
+<div class="hearts"></div>
+
+<div class="container">
+
+<img src="maloooka.jpg" class="photo">
+
+<h1>Happy Birthday Maloooka 🎀</h1>
+
+<p class="message">
+Happy Birthday to the most wonderful person! 💕
+
+I hope your day is filled with happiness, laughter,
+love, and unforgettable memories.
+
+You deserve all the beautiful things life has to offer.
+
+May all your dreams come true.
+
+Never stop smiling because your smile makes the world brighter.
+
+I’m so lucky to know someone as kind and amazing as you.
+
+Enjoy every moment of your special day.
+
+Happy Birthday, Princess! 🎂💖
+</p>
+
+<button onclick="showMessage()">
+Open Your Surprise 🎁
+</button>
+
+<div id="surprise">
+
+<h2>💖 Surprise 💖</h2>
+
+<p>
+
+Dear Maloooka...
+
+Always remember how special you are.
+
+Keep smiling.
+
+Keep shining.
+
+Keep being yourself.
+
+The world is a better place because you're in it.
+
+Happy Birthday! 🎀✨
+
+I wish you endless happiness,
+success,
+love,
+and beautiful memories.
+
+Love You Forever ❤️
+
+</p>
+
 </div>
 
-<script>
-function showMessage(){
-alert("Happy Birthday Malak 💖🎂 You deserve all the happiness in the world!");
-}
+</div>
 
-// simple balloons
-for(let i=0;i<12;i++){
-let b=document.createElement("div");
-b.classList.add("balloon");
-b.style.left=Math.random()*100+"vw";
-b.style.background=["#ff7aa2","#ffb6c1","#ff4d88","#ffd1dc"][i%4];
-b.style.animationDuration=(4+Math.random()*4)+"s";
-document.body.appendChild(b);
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,12 @@
-function showMessage(){
-  document.getElementById("hiddenMessage").innerHTML =
-    "🎉 Surprise! Malak, you are so loved and special 💖✨ Happy Birthday again!";
+function showMessage() {
+    const surprise = document.getElementById("surprise");
+
+    if (surprise.style.display === "block") {
+        surprise.style.display = "none";
+    } else {
+        surprise.style.display = "block";
+        surprise.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
 }

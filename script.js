@@ -1,18 +1,27 @@
+let count = 0;
+
 function showMessage() {
 
-    const surprise = document.getElementById("surprise");
     const btn = document.querySelector("button");
+    const surprise = document.getElementById("surprise");
 
-    btn.classList.add("shake");
+    count++;
 
-    setTimeout(() => {
-        btn.classList.remove("shake");
-    }, 700);
+    if(count < 6){
 
-    if (surprise.style.display === "block") {
-        surprise.style.display = "none";
-    } else {
+        btn.style.position = "fixed";
+
+        let x = Math.random() * (window.innerWidth - 220);
+        let y = Math.random() * (window.innerHeight - 80);
+
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+
+    }else{
+
+        btn.style.position = "static";
         surprise.style.display = "block";
+
     }
 
 }

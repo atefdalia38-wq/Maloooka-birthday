@@ -88,3 +88,18 @@ opacity:1;
 transform:translateY(0);
 }
 }
+.shake{
+animation:shake .7s;
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+15%{transform:translateX(-10px);}
+30%{transform:translateX(10px);}
+45%{transform:translateX(-10px);}
+60%{transform:translateX(10px);}
+75%{transform:translateX(-5px);}
+100%{transform:translateX(0);}
+
+}

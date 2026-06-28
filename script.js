@@ -219,3 +219,91 @@ gift.addEventListener("click", () => {
     }, 35);
 
 });
+// =========================
+// Fireworks
+// =========================
+
+function firework(x,y){
+
+    const colors=[
+        "#ff4f8b",
+        "#ffd700",
+        "#00c2ff",
+        "#7fff00",
+        "#ffffff",
+        "#ff8fab"
+    ];
+
+    for(let i=0;i<35;i++){
+
+        const p=document.createElement("div");
+
+        p.className="firework";
+
+        p.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        document.body.appendChild(p);
+
+        const angle=Math.random()*360;
+
+        const distance=80+Math.random()*120;
+
+        const dx=Math.cos(angle*Math.PI/180)*distance;
+
+        const dy=Math.sin(angle*Math.PI/180)*distance;
+
+        p.animate([
+
+        {
+            transform:"translate(0,0)",
+            opacity:1
+        },
+
+        {
+            transform:`translate(${dx}px,${dy}px)`,
+            opacity:0
+        }
+
+        ],{
+
+            duration:1200,
+
+            easing:"ease-out"
+
+        });
+
+        setTimeout(()=>{
+
+            p.remove();
+
+        },1200);
+
+    }
+
+}
+
+gift.addEventListener("click",()=>{
+
+    setTimeout(()=>{
+
+        firework(window.innerWidth/2,250);
+
+        setTimeout(()=>{
+
+            firework(250,300);
+
+        },300);
+
+        setTimeout(()=>{
+
+            firework(window.innerWidth-250,300);
+
+        },600);
+
+    },900);
+
+});

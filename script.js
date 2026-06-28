@@ -311,7 +311,7 @@ gift.addEventListener("click",()=>{
 // Typing Effect
 // =========================
 
-const message = `Happy Birthday My Beautiful Princess ❤️
+const message = `Happy Birthday ganim benim ❤️
 
 I wish you endless happiness,
 lots of success,
@@ -327,7 +327,7 @@ Never stop smiling...
 
 Because your smile is the most beautiful thing in this world. 💖
 
-Happy Birthday Malak 🎂✨❤️`;
+Happy Birthday guzelim 🎂✨❤️`;
 
 const typingElement = document.getElementById("typingText");
 

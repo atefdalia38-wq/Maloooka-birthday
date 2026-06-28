@@ -693,3 +693,16 @@ font-size:18px;
 }
 
 }
+#typingText{
+
+white-space:pre-line;
+
+font-size:22px;
+
+line-height:2;
+
+color:#666;
+
+min-height:260px;
+
+}

@@ -307,3 +307,66 @@ gift.addEventListener("click",()=>{
     },900);
 
 });
+// =========================
+// Typing Effect
+// =========================
+
+const message = `Happy Birthday My Beautiful Princess ❤️
+
+I wish you endless happiness,
+lots of success,
+beautiful memories,
+good health,
+and a life full of love.
+
+May all your dreams come true.
+
+Thank you for being such an amazing person.
+
+Never stop smiling...
+
+Because your smile is the most beautiful thing in this world. 💖
+
+Happy Birthday Malak 🎂✨❤️`;
+
+const typingElement = document.getElementById("typingText");
+
+let index = 0;
+
+function typeMessage(){
+
+    if(index < message.length){
+
+        typingElement.innerHTML += message.charAt(index);
+
+        index++;
+
+        setTimeout(typeMessage,40);
+
+    }
+
+}
+
+document.getElementById("showMessage").onclick = function(){
+
+    popup.style.display="flex";
+
+    typingElement.innerHTML="";
+
+    index=0;
+
+    typeMessage();
+
+}
+
+document.getElementById("openLetter").onclick = function(){
+
+    popup.style.display="flex";
+
+    typingElement.innerHTML="";
+
+    index=0;
+
+    typeMessage();
+
+}

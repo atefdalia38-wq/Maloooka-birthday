@@ -1,122 +1,140 @@
-// =========================
+// =============================
+// Loading Screen
+// =============================
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        document.getElementById("loading").style.opacity = "0";
+
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+        }, 800);
+
+    }, 2000);
+
+});
+
+// =============================
+// Gift Box
+// =============================
+
+const gift = document.getElementById("gift");
+
+gift.onclick = function () {
+
+    document.querySelector(".gift-lid").style.transform = "rotate(-120deg)";
+
+    setTimeout(() => {
+
+        document.getElementById("giftContainer").style.display = "none";
+
+        document.getElementById("website").style.display = "block";
+
+    }, 1000);
+
+};
+
+// =============================
 // Popup
-// =========================
+// =============================
 
 const popup = document.getElementById("popup");
-const openBtn = document.getElementById("openLetter");
-const closeBtn = document.getElementById("close");
 
-openBtn.onclick = () => {
+document.getElementById("showMessage").onclick = function () {
+
     popup.style.display = "flex";
-};
 
-closeBtn.onclick = () => {
+}
+
+document.getElementById("openLetter").onclick = function () {
+
+    popup.style.display = "flex";
+
+}
+
+document.getElementById("close").onclick = function () {
+
     popup.style.display = "none";
-};
 
-window.onclick = (e) => {
-    if (e.target == popup) {
-        popup.style.display = "none";
+}
+
+window.onclick = function(e){
+
+    if(e.target==popup){
+
+        popup.style.display="none";
+
     }
-};
 
-// =========================
+}
+
+// =============================
 // Floating Hearts
-// =========================
+// =============================
 
 const hearts = document.querySelector(".hearts");
 
-function createHeart() {
+function createHeart(){
 
-    const heart = document.createElement("div");
+    const heart=document.createElement("div");
 
-    heart.innerHTML = "❤";
+    heart.innerHTML="❤";
 
-    heart.style.position = "absolute";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-30px";
-    heart.style.fontSize = (15 + Math.random() * 30) + "px";
-    heart.style.color = [
-        "#ff4f8b",
-        "#ff7bac",
-        "#ff99c8",
-        "#ffb6d9",
-        "#ffcce6"
-    ][Math.floor(Math.random() * 5)];
+    heart.style.position="absolute";
 
-    heart.style.opacity = Math.random();
+    heart.style.left=Math.random()*100+"vw";
 
-    heart.style.animation = `fly ${4 + Math.random() * 5}s linear forwards`;
+    heart.style.bottom="-40px";
+
+    heart.style.fontSize=(18+Math.random()*25)+"px";
+
+    heart.style.color="#ff5d9e";
+
+    heart.style.opacity=Math.random();
+
+    heart.style.animation="fly 7s linear forwards";
 
     hearts.appendChild(heart);
 
-    setTimeout(() => {
+    setTimeout(()=>{
+
         heart.remove();
-    }, 9000);
+
+    },7000);
+
 }
 
-setInterval(createHeart, 180);
+setInterval(createHeart,180);
 
-// =========================
-// Add Animation Dynamically
-// =========================
+// =============================
+// Animation
+// =============================
 
-const style = document.createElement("style");
+const style=document.createElement("style");
 
-style.innerHTML = `
+style.innerHTML=`
+
 @keyframes fly{
 
 0%{
-transform:translateY(0) scale(0.5);
+
+transform:translateY(0) scale(.5);
+
 opacity:1;
+
 }
 
 100%{
-transform:translateY(-120vh)
-translateX(${Math.random()*200-100}px)
-rotate(360deg)
-scale(1.4);
+
+transform:translateY(-120vh) translateX(-50px) rotate(360deg);
+
 opacity:0;
+
 }
 
 }
+
 `;
 
 document.head.appendChild(style);
-
-// =========================
-// Sparkle Effect
-// =========================
-
-function sparkle(){
-
-    const star = document.createElement("div");
-
-    star.innerHTML="✨";
-
-    star.style.position="fixed";
-    star.style.left=Math.random()*100+"vw";
-    star.style.top=Math.random()*100+"vh";
-    star.style.fontSize=(10+Math.random()*20)+"px";
-    star.style.pointerEvents="none";
-    star.style.opacity="1";
-    star.style.transition="2s";
-
-    document.body.appendChild(star);
-
-    setTimeout(()=>{
-
-        star.style.opacity="0";
-        star.style.transform="scale(2)";
-
-    },100);
-
-    setTimeout(()=>{
-
-        star.remove();
-
-    },2000);
-
-}
-
-setInterval(sparkle,600);

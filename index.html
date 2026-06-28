@@ -1,50 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Malak ❤️</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- Floating Hearts -->
-<div class="hearts"></div>
+<!-- Loading Screen -->
 
-<!-- Stars -->
-<div class="stars"></div>
+<div id="loading">
 
-<!-- Top Banner -->
-<div class="banner">
-<span>🎀 Happy Birthday 🎀</span>
+<div class="loader">
+
+<div class="loader-heart">💖</div>
+
+<h1>A Special Surprise</h1>
+
+<p>Loading...</p>
+
 </div>
 
-<!-- Hero Section -->
+</div>
+
+<!-- Gift Screen -->
+
+<div id="giftContainer">
+
+<div class="gift" id="gift">
+
+<div class="gift-lid"></div>
+
+<div class="gift-box"></div>
+
+<div class="gift-ribbon-v"></div>
+
+<div class="gift-ribbon-h"></div>
+
+</div>
+
+<h2>Click The Gift 🎁</h2>
+
+</div>
+
+<!-- Website -->
+
+<div id="website">
+
+<div class="hearts"></div>
+
+<div class="confetti"></div>
+
+<header>
+
+<h1>Happy Birthday</h1>
+
+<h2>Malak ❤️</h2>
+
+</header>
 
 <section class="hero">
 
-<div class="photo-box">
+<div class="photo">
 
 <img src="maloooka.jpg" alt="Malak">
 
 </div>
 
-<h1>Happy Birthday</h1>
+<h3>To The Most Beautiful Soul ✨</h3>
 
-<h2>Malak 💖</h2>
+<p>
 
-<p class="subtitle">
+May your birthday be filled with love,
 
-Today is all about you ✨
+happiness,
 
-May your smile always stay this beautiful.
+beautiful moments,
+
+and dreams that come true.
+
+You deserve all the joy in the world.
 
 </p>
 
@@ -56,33 +104,37 @@ Open My Letter 💌
 
 </section>
 
-<!-- Birthday Cake -->
-
 <section class="cake-section">
 
 <div class="cake">
 
 <div class="candle">
+
 <div class="flame"></div>
+
 </div>
 
-<div class="top"></div>
+<div class="cake-top"></div>
 
-<div class="middle"></div>
+<div class="cake-middle"></div>
 
-<div class="bottom"></div>
+<div class="cake-bottom"></div>
 
 </div>
 
 </section>
-
-<!-- Gallery -->
 
 <section class="gallery">
 
 <h2>Beautiful Memories 📸</h2>
 
-<div class="images">
+<div class="gallery-grid">
+
+<img src="maloooka.jpg">
+
+<img src="maloooka.jpg">
+
+<img src="maloooka.jpg">
 
 <img src="maloooka.jpg">
 
@@ -94,31 +146,45 @@ Open My Letter 💌
 
 </section>
 
-<!-- Message Popup -->
+<section class="love">
 
-<div class="popup" id="popup">
+<h2>I Have Something To Tell You ❤️</h2>
 
-<div class="popup-content">
+<button id="showMessage">
+
+Read Message
+
+</button>
+
+</section>
+
+<div id="popup">
+
+<div class="popup-box">
 
 <span id="close">&times;</span>
 
-<h2>For You ❤️</h2>
+<h2>Happy Birthday Princess ❤️</h2>
 
 <p>
 
-Happy Birthday to the most wonderful person.
+I hope this birthday brings you endless happiness,
 
-I hope this year brings you happiness,
-
-success,
+lots of success,
 
 beautiful memories,
 
-and endless smiles.
+peace,
 
-You deserve all the love in the world.
+love,
 
-🎂💖✨
+and every dream you've ever wished for.
+
+Keep smiling,
+
+because your smile makes everything brighter.
+
+Happy Birthday 🎂💖✨
 
 </p>
 
@@ -126,9 +192,13 @@ You deserve all the love in the world.
 
 </div>
 
-<!-- Music -->
+<footer>
 
-<audio autoplay loop>
+Made With ❤️ Especially For Malak
+
+</footer>
+
+<audio id="music" loop>
 
 <source src="music.mp3" type="audio/mpeg">
 
@@ -136,5 +206,8 @@ You deserve all the love in the world.
 
 <script src="script.js"></script>
 
+</div>
+
 </body>
+
 </html>

@@ -138,3 +138,84 @@ opacity:0;
 `;
 
 document.head.appendChild(style);
+// =========================
+// Confetti Effect
+// =========================
+
+function createConfetti() {
+
+    const confetti = document.createElement("div");
+
+    confetti.style.position = "fixed";
+    confetti.style.top = "-20px";
+    confetti.style.left = Math.random() * window.innerWidth + "px";
+
+    confetti.style.width = "10px";
+    confetti.style.height = "18px";
+
+    const colors = [
+        "#ff4f8b",
+        "#ffd700",
+        "#87cefa",
+        "#98fb98",
+        "#ff69b4",
+        "#ffffff"
+    ];
+
+    confetti.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+    confetti.style.borderRadius = "4px";
+    confetti.style.pointerEvents = "none";
+    confetti.style.zIndex = "9999";
+
+    document.body.appendChild(confetti);
+
+    let y = -20;
+    let x = parseFloat(confetti.style.left);
+
+    const speed = 2 + Math.random() * 4;
+
+    const interval = setInterval(() => {
+
+        y += speed;
+        x += Math.sin(y / 25);
+
+        confetti.style.top = y + "px";
+        confetti.style.left = x + "px";
+        confetti.style.transform =
+            `rotate(${y * 5}deg)`;
+
+        if (y > window.innerHeight + 20) {
+
+            clearInterval(interval);
+
+            confetti.remove();
+
+        }
+
+    }, 16);
+
+}
+
+// يبدأ بعد فتح الهدية
+
+gift.addEventListener("click", () => {
+
+    let count = 0;
+
+    const timer = setInterval(() => {
+
+        createConfetti();
+
+        count++;
+
+        if (count > 180) {
+
+            clearInterval(timer);
+
+        }
+
+    }, 35);
+
+});
